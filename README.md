@@ -87,6 +87,11 @@ Categorical data variables play a crucial role in understanding the characterist
 
 ![Pie Chart](img/pie_chart.png)
 
+- **Claim Status:** The data set is almost evenly split between videos labeled as 'opinion' and 'claim', with 49.65% and 50.35% respectively, signifying a balanced representation of content types.
+- **Verified Status:** A large majority of video authors, 93.71%, are not verified, while only a small fraction, 6.29%, have verified status. This suggests that the platform is predominantly used by non-verified users.
+- **Author Ban Status:** Most authors are active, constituting 80.61% of the data set. A smaller percentage of authors are 'banned' (8.57%) or 'under review' (10.83%), indicating moderate levels of content moderation.
+
+
 
 #### Numerical Data
 The numerical data in our dataset primarily comprises video duration and various engagement metrics. We generated histograms and box plots for each attribute to observe their distributions. (Summarize or link to visual representations.)
