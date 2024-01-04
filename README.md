@@ -78,6 +78,9 @@ To ensure the reliability of our findings, we meticulously addressed issues of m
 - **Handling Missing Values:** Identified and removed missing values from the dataset.
 - **Addressing Duplicate Records:** Confirmed no duplicate values, indicating a unique dataset.
 
+After removing 298 entries with missing data and confirming no duplicates, the dataset comprises
+19,084 unique videos for analysis.
+
 ### General Exploratory Data Analysis (EDA)
 #### Categorical Data
 Categorical data variables play a crucial role in understanding the characteristics of the TikTok data set. Our exploratory data analysis revealed the following distributions. (You might consider summarizing the key findings or including images of the charts.)
