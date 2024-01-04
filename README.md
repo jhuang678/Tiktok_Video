@@ -38,10 +38,6 @@ The dataset, sourced from Kaggle, includes 19,382 TikTok videos, categorized as 
 Our analysis begins with an expansive dataset comprising 19,382 TikTok videos, each encapsulating various facets of user engagement. Each video in the dataset is described by 12 distinct attributes, which include both quantitative engagement metrics and categorical descriptors for content type.
 
 ### Attributes of Interest
-For the full list of attributes, please refer to the original report.
-
-### Initial Data Exploration
-An initial glimpse into the dataset showcases the diversity of content and engagement. (Here, you may want to describe the key points or upload the tables as images and link them in the README.)
 
 #### Table: Introduction of the Data Columns
 Column Name | Type | Description
@@ -59,6 +55,12 @@ video_share_count | float | Total number of times the published video has been s
 video_download_count | float | Total number of times the published video has been downloaded by other users.
 video_comment_count | float | Total number of comments on the published video.
 
+Note: regarding claim status, an “opinion” refers to an individual’s or group’s personal belief or thought.
+A “claim” refers to information that is either unsourced or from an unverified source.
+
+### Initial Data Exploration
+An initial glimpse into the dataset showcases the diversity of content and engagement.
+
 #### Table: Summary of Video Data
 \# | claim_status | video_id | video_duration_sec | video_transcription | verified_status | author_ban_status | video_view_count | video_like_count | video_share_count | video_download_count | video_comment_count
 ---|--------------|----------|--------------------|---------------------|-----------------|-------------------|------------------|------------------|------------------|---------------------|--------------------
@@ -67,9 +69,9 @@ video_comment_count | float | Total number of comments on the published video.
 2 | claim | 9859838091 | 31 | ... | not verified | active | 902185.0 | 97690.0 | 2858.0 | 833.0 | 329.0
 3 | claim | 1866847991 | 25 | ... | not verified | active | 437506.0 | 239954.0 | 34812.0 | 1234.0 | 584.0
 4 | claim | 7105231098 | 19 | ... | not verified | active | 56167.0 | 34987.0 | 4110.0 | 547.0 | 152.0
-![image](https://github.com/jhuang678/Tiktok_Video/assets/100253011/ed9da2f7-f052-4deb-83e9-58bde0414a26)
 
-
+Note: Regarding video transcription text, as this assignment does not incorporate text analysis, the
+value presented in the preceding table has been streamlined.
 
 ### Missing Values and Duplicates
 To ensure the reliability of our findings, we meticulously addressed issues of missing information and redundancy:
