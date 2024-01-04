@@ -85,6 +85,9 @@ After removing 298 entries with missing data and confirming no duplicates, the d
 #### Categorical Data
 Categorical data variables play a crucial role in understanding the characteristics of the TikTok data set. Our exploratory data analysis revealed the following distributions. (You might consider summarizing the key findings or including images of the charts.)
 
+![Pie Chart](img/pie_chart.png)
+
+
 #### Numerical Data
 The numerical data in our dataset primarily comprises video duration and various engagement metrics. We generated histograms and box plots for each attribute to observe their distributions. (Summarize or link to visual representations.)
 
