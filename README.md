@@ -91,19 +91,75 @@ Categorical data variables play a crucial role in understanding the characterist
 - **Verified Status:** A large majority of video authors, 93.71%, are not verified, while only a small fraction, 6.29%, have verified status. This suggests that the platform is predominantly used by non-verified users.
 - **Author Ban Status:** Most authors are active, constituting 80.61% of the data set. A smaller percentage of authors are 'banned' (8.57%) or 'under review' (10.83%), indicating moderate levels of content moderation.
 
-
-
 #### Numerical Data
-The numerical data in our dataset primarily comprises video duration and various engagement metrics. We generated histograms and box plots for each attribute to observe their distributions. (Summarize or link to visual representations.)
+The numerical data in our dataset primarily comprises video duration and various engagement metrics.
+
+Histograms were generated for each attribute in the data set to observe their distributions:
+![Histogram of Feature](img/histogram.png)
+
+Box plots were generated for each attribute in the data set:
+![Box Plot of Features](img/boxplot.png)
+
+Our exploratory data analysis (EDA) of these quantities has yielded key insights:
+- **Video Duration:** The duration of the videos shows a uniform distribution, indicating a wide variety of content lengths with no apparent extremes or biases towards shorter or longer videos.
+- **Engagement Metrics:** Metrics such as views, likes, shares, downloads, and comments are heavily right-skewed. This suggests that while most videos receive a low level of engagement, there are a few videos that achieve exceptionally high engagement, standing out as outliers.
+
+These findings are crucial as they suggest that most content struggles to achieve virality, with only a few videos breaking through to significant popularity. 
 
 ## Proposed Methodology
 Our methodology includes data collection and cleaning, exploratory data analysis, data processing, standardization, and applications of classification, clustering, and topic modeling techniques to derive insights.
 
 ### Data Mining Process
 The data analysis for this study is partitioned into several sequential stages, each building on the findings of the previous one. (Elaborate on the stages or use a diagram to illustrate.)
+![Data Mining Process](img/dm_process.png)
 
-### Research Questions
-We explore three main research questions regarding classifying claims and opinions, clustering user engagement metrics, and analyzing topic clustering and share-ability. (Detail each question and the approach taken.)
+Note:  The top flow relates to classifying claim or opinion shorts, the middle flow relates to grouping videos by user engagement, and the bottom flow focuses on identifying topics that enhance share-ability.
 
-## Analysis and Results
-### Research Question 
+The detail explanation of each stage is as follows:
+- **Data Collection:** Sourced over 19,000 TikTok video records from Kaggle.
+- **Data Cleaning:** Removed missing values and duplicates for a clean dataset.
+- **General EDA:** Broad analysis of categorical and numerical variables.
+- **Data Pre-processing:** Prepared data for analysis with normalization and transformation.
+- **EDA:** In-depth analysis using visualizations to identify patterns.
+- **Standardization:** Normalized data to a common scale for machine learning.
+- **Classification Modeling:** Created models to classify video content authenticity.
+- **Cluster Modeling:** Used clustering to segment videos by user interactions.
+- **Topic Modeling:** Employed NLP to uncover themes in video transcriptions.
+
+These stages are designed to incrementally advance our understanding, culminating in actionable insights into the drivers of user engagement on TikTok.
+
+### Research Question 1: Classifying Claims and Opinions
+
+Our method for classifying TikTok videos into claims or opinions includes:
+- **Feature Selection:** Focusing on claim status, video duration, user verification, author status, and engagement metrics.
+- **Visualization Techniques:** Using pie charts, pair plots, KDE plots, heat maps, and histograms.
+- **Models for Classification:** Implementing Random Forest, Gradient Boosting, KNN, LDA, Logistic Regression, and Decision Tree.
+- **Challenges:** Addressing multicollinearity, hyper-parameter tuning, and over-fitting.
+- **Process Stages:** Covering data pre-processing, EDA, standardization, classification modeling, and result interpretation.
+
+This streamlined process aims to accurately categorize video content on TikTok.
+
+### Research Question 2: Clustering User Engagement Metrics
+
+Our approach to understanding user engagement patterns on TikTok involves:
+- **Feature Selection:** Analyzing metrics like video views, likes, shares, downloads, and comments.
+- **Visualization Techniques:** Utilizing the Elbow diagram for optimal cluster identification in K-means.
+- **Models for Clustering:** Applying K-means for unsupervised clustering.
+- **Challenges:** Determining the right number of clusters and ensuring adequate iteration for optimal clustering.
+- **Process Stages:** Involving data preprocessing, EDA, standardization, cluster modeling, and result interpretation.
+
+This method aims to segment TikTok videos into distinct engagement groups for deeper insights.
+
+### Research Question 3: Topic Clustering and Share-ability
+
+Our approach for analyzing the share-ability of TikTok videos involved:
+- **Feature Selection and Preprocessing:** Focusing on video transcriptions and related metrics.
+- **Visualization and Modeling:** Employing word clouds, sentiment analysis, and Latent Dirichlet Allocation (LDA) for topic modeling.
+- **Challenges and Goals:** Addressing text analysis complexity and identifying key topics driving share-ability.
+
+This approach is designed to identify the thematic elements that contribute to the viral nature of TikTok videos, contributing to a deeper understanding of content share-ability on the platform.
+
+### Conclusion of Methodology
+
+Our methodical approach ensures a systematic exploration of the TikTok data set, with the ultimate goal of unveiling the intricacies of content engagement. By the end of this process, we aim to offer a clear narrative of what drives user interactions and share-ability on TikTok, providing valuable insights for content creators and platform moderators alike.
+
