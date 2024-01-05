@@ -186,9 +186,6 @@ This approach is designed to identify the thematic elements that contribute to t
 
 Our methodical approach ensures a systematic exploration of the TikTok data set, with the ultimate goal of unveiling the intricacies of content engagement. By the end of this process, we aim to offer a clear narrative of what drives user interactions and share-ability on TikTok, providing valuable insights for content creators and platform moderators alike.
 
-
-Sure, here's how the provided LaTeX code can be converted into Markdown format:
-
 ## Analysis and Results
 
 ### Research Question 1: Classifying Claims and Opinions
@@ -492,21 +489,63 @@ Sentiment analysis revealed a negligible inverse correlation between sentiment s
 
 ![Pie Chart of Video's Sentiment](img/sentiments_pie.png)
 
+#### Topic Modeling
 
-21. Flowchart of Topic Modeling Process:
+Topic modeling serves as a crucial analytical technique for identifying the themes within TikTok video transcripts that potentially affect shareability:
 
 ![Flowchart of Topic Modeling Process](img/lda_process.png)
 
+- **Latent Dirichlet Allocation (LDA):** Applied to pre-processed text data to extract topics.
+- **Hyperparameter Tuning:** Selected settings included 100 topics, learning decay of 0.8, a maximum of 20 iterations, and a fixed random state for consistency.
+- **Topic Assignment:** Each video was automatically assigned to a topic, with manual review for naming and contextual understanding.
+- **Visualization:** Topics visualized to present the findings in an easily interpretable manner.
 
-22. Top 10 Topics Shares Histogram:
+#### Result
+
+The final stage of our analysis was to synthesize the topics discovered through LDA into a ranking based on their average shares. The table below showcases the top 10 topics, providing their relative shareability.
+
+*Top 10 Topics by Average Shares*
+
+| Rank | Topic Label             | Mean Shares | Num Videos | Std Shares |
+|------|-------------------------|-------------|------------|------------|
+| 1    | Internet Forum          | 30241.51    | 139        | 37919.18   |
+| 2    | Strategic Games         | 27043.56    | 168        | 35880.83   |
+| 3    | Research Claims         | 25488.41    | 237        | 36327.26   |
+| 4    | Equestrian Olympics     | 21119.88    | 199        | 32993.61   |
+| 5    | Animal Communication    | 20900.55    | 165        | 35906.48   |
+| 6    | Space Heat & Population | 20336.34    | 200        | 38854.10   |
+| 7    | Winter Chemistry        | 19861.58    | 222        | 34054.71   |
+| 8    | Australasian Geography  | 19822.17    | 250        | 38023.23   |
+| 9    | Telescope Garden        | 19536.64    | 239        | 38049.12   |
+| 10   | Botanical Sports        | 19528.95    | 244        | 37662.68   |
+
+This data reveals 'Internet Forum' and 'Strategic Games' as highly shared topics, suggesting strong user engagement. In contrast, 'Botanical Sports' and 'Telescope Garden' show lower mean shares, hinting at niche appeal. The variability in 'Std Shares' across topics indicates a mix of viral and less popular videos within each category. Content creators can use this information to focus on topics with higher share-ability.
+
+Following the topic modeling process, we analyzed the distribution of share counts for the top and last  10 topics using histograms:
 
 ![Top 10 Topics Shares Histogram](img/top_10_topics.png)
 
-
-23. Last 10 Topics Shares Histogram:
-
 ![Last 10 Topics Shares Histogram](img/last_10_topics_histogram.png)
 
+- **Variability in Sharing:** The histograms reveal significant variability within topics. While most videos have a moderate number of shares, a few outliers within topics like 'Internet Forum' and 'Strategic Games' have exceptionally high share counts.
+- **Content Virality:** The spread of share counts within these popular topics suggests that while many videos do not gain widespread attention, certain videos achieve viral status, substantially elevating the mean share count.
+- **Topic Popularity:** Topics such as 'Australasian Geography' and 'Telescope Garden' show a consistent share count distribution, indicating a steady level of user interest and engagement across videos.
+- **Consistent Engagement:** Unlike the top topics, the last 10 topics exhibit a narrower spread of shares, suggesting a consistent but modest level of engagement across videos.
 
+The comprehensive analysis of the top and last 10 topics provides a strategic view of the TikTok platform's content landscape. It suggests that a balanced approach, incorporating both popular and niche topics, could be beneficial for maximizing shareability and audience reach.
 
+#### Conclusion of Research Question 3
+
+The investigation into topic shareability on TikTok culminates with several key takeaways:
+- **Content Diversity:** Our analysis indicates a diverse array of topics that resonate with TikTok users, from 'Internet Forum' discussions to 'Strategic Games', each carrying its own weight in social shareability.
+- **Viral Potential:** Some topics demonstrated the potential to go viral, with certain videos reaching exceptional share counts and indicating the possibility of content to break through the noise and capture widespread attention.
+- **Niche Appeal:** Other topics, while less shared overall, showed consistent engagement, suggesting a dedicated audience that values specific content, representing areas of growth and opportunity for new content creation.
+- **Strategic Insights:** For content creators, these findings highlight the importance of tailoring content to both popular trends and emerging niches, striking a balance between riding the wave of viral content and cultivating a dedicated following in less saturated topic areas.
+
+## Conclusions
+
+The explorative journey through TikTok's data has illuminated the complex interplay between content, creator, and consumer, revealing nuanced facets of user engagement and content dissemination:
+- **Claims vs. Opinions:** We have properly used Ensemble Learning Models such as Random Forest and Gradient Boosting to classify claim and opinion with 99% accuracy. The fine line dividing claims from opinions is navigated by the user's interaction with the content.
+- **Clustering Engagement:** The final 3 means clustering helps in understanding the relationship between different user engagement metrics and can guide targeted strategies for each cluster. Engagement metrics cluster in a manner reflecting the varying degrees of user interaction—from passive viewership to active sharing.
+- **Share-ability and Topics:** The top 10 topics may contain videos that have the potential to go viral or have already gone viral, as opposed to the last 10 topics which seem to have a more modest performance in terms of shares.
 
