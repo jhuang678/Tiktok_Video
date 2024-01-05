@@ -10,36 +10,44 @@
 - [Conclusions](#conclusions)
 
 ## Introduction
+
 This report explores TikTok's content authenticity and user interaction patterns using data-driven techniques, highlighting its impact on digital communication and advertising.
 
 ### Motivation
+
 The motivations driving this research are manifold, focusing on enhancing user experience and trust within TikTok's platform:
 - Ensuring **content integrity** to establish TikTok as a source of reliable information.
 - Improving **advertising effectiveness** through detailed analysis of user engagement metrics.
 - Advancing **content recommendation algorithms** for personalized user experiences.
 
 ### Problem Statement and Solving Strategies
+
 We address the following key questions to navigate the challenges of data mining in the context of TikTok:
 - **Classification of Content:** Development and implementation of algorithms to discern and categorize video content based on authenticity.
 - **Engagement Analysis:** Utilization of clustering techniques to segment videos by user interaction levels, revealing patterns that drive engagement.
 - **Share-ability Assessment:** Application of NLP to determine the share-ability of content, identifying what makes certain videos more viral than others.
 
 ### Data Mining Challenges
+
 In exploring TikTok's user engagement and content reliability, we faced multiple challenges:
 - **Data Complexity:** Managing the volume, diversity, and quality of data.
 - **Model Precision and Bias:** Developing accurate models while avoiding bias and over-fitting.
 - **Broad Applicability:** Ensuring findings and methodologies are adaptable across various social media platforms.
 
 ## Data Sources
+
 ### Overview of the Data Set
+
 The dataset, sourced from Kaggle, includes 19,382 TikTok videos, categorized as 'claim' or 'opinion', with a range of engagement metrics. Details: [Kaggle Dataset](https://www.kaggle.com/datasets/yakhyojon/tiktok/data).
 
 ### Composition of the Dataset
+
 Our analysis begins with an expansive dataset comprising 19,382 TikTok videos, each encapsulating various facets of user engagement. Each video in the dataset is described by 12 distinct attributes, which include both quantitative engagement metrics and categorical descriptors for content type.
 
 ### Attributes of Interest
 
 #### Table: Introduction of the Data Columns
+
 Column Name | Type | Description
 ------------|------|------------
 \# | int | TikTok assigned number for video with claim/opinion.
@@ -59,9 +67,11 @@ Note: regarding claim status, an “opinion” refers to an individual’s or gr
 A “claim” refers to information that is either unsourced or from an unverified source.
 
 ### Initial Data Exploration
+
 An initial glimpse into the dataset showcases the diversity of content and engagement.
 
 #### Table: Summary of Video Data
+
 \# | claim_status | video_id | video_duration_sec | video_transcription | verified_status | author_ban_status | video_view_count | video_like_count | video_share_count | video_download_count | video_comment_count
 ---|--------------|----------|--------------------|---------------------|-----------------|-------------------|------------------|------------------|------------------|---------------------|--------------------
 0 | claim | 7017666017 | 59 | ... | not verified | under review | 343296.0 | 19425.0 | 241.0 | 1.0 | 0.0
@@ -74,6 +84,7 @@ Note: Regarding video transcription text, as this assignment does not incorporat
 value presented in the preceding table has been streamlined.
 
 ### Missing Values and Duplicates
+
 To ensure the reliability of our findings, we meticulously addressed issues of missing information and redundancy:
 - **Handling Missing Values:** Identified and removed missing values from the dataset.
 - **Addressing Duplicate Records:** Confirmed no duplicate values, indicating a unique dataset.
@@ -82,7 +93,9 @@ After removing 298 entries with missing data and confirming no duplicates, the d
 19,084 unique videos for analysis.
 
 ### General Exploratory Data Analysis (EDA)
+
 #### Categorical Data
+
 Categorical data variables play a crucial role in understanding the characteristics of the TikTok data set. Our exploratory data analysis revealed the following distributions. (You might consider summarizing the key findings or including images of the charts.)
 
 ![Pie Chart](img/pie_chart.png)
@@ -92,30 +105,37 @@ Categorical data variables play a crucial role in understanding the characterist
 - **Author Ban Status:** Most authors are active, constituting 80.61% of the data set. A smaller percentage of authors are 'banned' (8.57%) or 'under review' (10.83%), indicating moderate levels of content moderation.
 
 #### Numerical Data
+
 The numerical data in our dataset primarily comprises video duration and various engagement metrics.
 
 Histograms were generated for each attribute in the data set to observe their distributions:
+
 ![Histogram of Feature](img/histogram.png)
 
 Box plots were generated for each attribute in the data set:
+
 ![Box Plot of Features](img/boxplot.png)
 
 Our exploratory data analysis (EDA) of these quantities has yielded key insights:
+
 - **Video Duration:** The duration of the videos shows a uniform distribution, indicating a wide variety of content lengths with no apparent extremes or biases towards shorter or longer videos.
 - **Engagement Metrics:** Metrics such as views, likes, shares, downloads, and comments are heavily right-skewed. This suggests that while most videos receive a low level of engagement, there are a few videos that achieve exceptionally high engagement, standing out as outliers.
 
 These findings are crucial as they suggest that most content struggles to achieve virality, with only a few videos breaking through to significant popularity. 
 
 ## Proposed Methodology
+
 Our methodology includes data collection and cleaning, exploratory data analysis, data processing, standardization, and applications of classification, clustering, and topic modeling techniques to derive insights.
 
 ### Data Mining Process
+
 The data analysis for this study is partitioned into several sequential stages, each building on the findings of the previous one. (Elaborate on the stages or use a diagram to illustrate.)
 ![Data Mining Process](img/dm_process.png)
 
 Note:  The top flow relates to classifying claim or opinion shorts, the middle flow relates to grouping videos by user engagement, and the bottom flow focuses on identifying topics that enhance share-ability.
 
 The detail explanation of each stage is as follows:
+
 - **Data Collection:** Sourced over 19,000 TikTok video records from Kaggle.
 - **Data Cleaning:** Removed missing values and duplicates for a clean dataset.
 - **General EDA:** Broad analysis of categorical and numerical variables.
@@ -131,6 +151,7 @@ These stages are designed to incrementally advance our understanding, culminatin
 ### Research Question 1: Classifying Claims and Opinions
 
 Our method for classifying TikTok videos into claims or opinions includes:
+
 - **Feature Selection:** Focusing on claim status, video duration, user verification, author status, and engagement metrics.
 - **Visualization Techniques:** Using pie charts, pair plots, KDE plots, heat maps, and histograms.
 - **Models for Classification:** Implementing Random Forest, Gradient Boosting, KNN, LDA, Logistic Regression, and Decision Tree.
@@ -142,6 +163,7 @@ This streamlined process aims to accurately categorize video content on TikTok.
 ### Research Question 2: Clustering User Engagement Metrics
 
 Our approach to understanding user engagement patterns on TikTok involves:
+
 - **Feature Selection:** Analyzing metrics like video views, likes, shares, downloads, and comments.
 - **Visualization Techniques:** Utilizing the Elbow diagram for optimal cluster identification in K-means.
 - **Models for Clustering:** Applying K-means for unsupervised clustering.
@@ -153,6 +175,7 @@ This method aims to segment TikTok videos into distinct engagement groups for de
 ### Research Question 3: Topic Clustering and Share-ability
 
 Our approach for analyzing the share-ability of TikTok videos involved:
+
 - **Feature Selection and Preprocessing:** Focusing on video transcriptions and related metrics.
 - **Visualization and Modeling:** Employing word clouds, sentiment analysis, and Latent Dirichlet Allocation (LDA) for topic modeling.
 - **Challenges and Goals:** Addressing text analysis complexity and identifying key topics driving share-ability.
@@ -192,7 +215,9 @@ Our dataset contained categorical data, which are variables that represent types
 #### Exploratory Data Analysis - Categorical Data
 
 The exploratory analysis of categorical data offers insights into the authenticity and user-related statuses of TikTok video content. We summarize our findings as follows:
+
 ![Pie Chart for Categorical Features in "Claim"](img/pie_chart_claim.png)
+
 ![Pie Chart for Categorical Features in "Opinion"](img/pie_chart_opinion.png)
 
 **Verification Status**
@@ -222,25 +247,33 @@ The following tables encapsulate the categorical distribution within our dataset
 The prevalence of non-verified content suggests that TikTok's platform is widely used by regular users rather than officially verified entities. The author ban status distribution indicates a healthier discourse in opinions, with fewer authors facing bans or being under review compared to claim videos. 
 
 #### Exploratory Data Analysis - Numerical Data
+
 Through the lens of exploratory data analysis, we have observed the behavior of numerical metrics associated with TikTok videos and their engagement levels. 
+
 ![Pair Plots by Claim and Opinion](img/pairplot.png)
 
 **Video Duration and Engagement Metrics**
+
 The analysis indicates that the length of a video does not necessarily influence whether it is categorized as a claim or an opinion. Moreover, a consistent observation is that 'claims' tend to engage users more than 'opinions', as evidenced by higher variability and occasional peaks in engagement measures.
 
 **Correlation Insights**
+
 A deeper look into the relationships between various metrics such as views, likes, shares, and comments revealed positive correlations. This means that typically, videos that are viewed more frequently also tend to be liked and shared more, a pattern that is intuitive in the realm of social media.
 
 **Kernel Density Estimation**
+
 From the kernel density estimates, we learned that most videos, regardless of being a claim or opinion, seldom go viral, with most accumulating only a handful of interactions. However, a certain segment of claim videos breaks this norm and garners significantly higher engagement.
+
 ![KDE for Claim](img/kde_claim.png)
+
 ![KDE for Opinion](img/kde_opinion.png)
 
 
 **Correlation Heatmap**
-The correlation heatmap offers a quantitative perspective, highlighting that engagement metrics are not just loosely associated but are strongly interlinked. Videos identified as 'claims' are more likely to be engaging, whereas 'opinions' see slightly less interaction. Interestingly, videos from active authors are usually less associated with the 'claim' status, suggesting that creators with ongoing activity on the platform tend to share more opinions than unsubstantiated claims.
-![Correlation Heatmap](img/heatmap.png)
 
+The correlation heatmap offers a quantitative perspective, highlighting that engagement metrics are not just loosely associated but are strongly interlinked. Videos identified as 'claims' are more likely to be engaging, whereas 'opinions' see slightly less interaction. Interestingly, videos from active authors are usually less associated with the 'claim' status, suggesting that creators with ongoing activity on the platform tend to share more opinions than unsubstantiated claims.
+
+![Correlation Heatmap](img/heatmap.png)
 
 *Correlation of Numerical Features with Claim Status*
 
@@ -259,11 +292,15 @@ The correlation heatmap offers a quantitative perspective, highlighting that eng
 This table conveys the strength of the relationship between various numerical features and the likelihood of a video being a claim. It highlights that engagement metrics have a strong positive correlation with claims, while active authorship is moderately inversely related. This reinforces the notion that active content creators on TikTok are less likely to produce claim videos.
 
 #### Standardization
+
 For optimal performance of certain machine learning models, the data set was standardized using the Standard Scaler. Post standardization, box plots were redrawn to visualize the transformed data distribution.
+
 ![Box Plot of Features after standardization](img/boxplots.png)
 
 #### Training and Testing Process
+
 The figure below encapsulates the entire training and testing pipeline, from the initial split to the final selection of the optimal model. 
+
 ![Flowchart of the Training and Testing Process](img/train_test_process.png)
 
 **Splitting the Data**
@@ -308,8 +345,8 @@ The results table reveals that Gradient Boosting and Random Forest performed exc
 Feature importance analysis, conducted after training our Random Forest model, provides valuable insights into the relative importance of each predictor variable in determining the claim status of a video. The most influential feature was the number of views, indicating that the more a video is viewed, the more likely it is to be classified correctly as a claim or opinion. Other engagement metrics such as like count, share count, and comment count also proved to be strong predictors. Conversely, features such as video duration, author status, and verified status did not play a significant role in predicting the claim status. These findings emphasize the importance of focusing on engagement-related features when predicting content classification.
 
 **Interpretation of Results**
-![Feature Importance after Random Forest](img/feature_importance.png)
 
+![Feature Importance after Random Forest](img/feature_importance.png)
 
 #### Testing Results
 
@@ -335,6 +372,7 @@ Decision Tree also showed robust performance, particularly in terms of training 
 LDA, while perfect in precision, was markedly less accurate, indicating potential challenges in generalizing and distinguishing between classes effectively.
 
 These results provide a clear direction for selecting a model to deploy for predicting the classification of TikTok video content, with Random Forest and Gradient Boosting being the front-runners due to their excellent balance between precision and recall, as well as their superb ability to differentiate between the claim and the opinion.
+
 ![Model Accuracy Results](img/result.png)
 
 #### Conclusion of Research Question 1
@@ -346,20 +384,26 @@ In essence, the research reveals that while user and video characteristics like 
 Well-tuned machine learning models are effective tools for parsing the vast content landscape of TikTok to discern claims from opinions, paving the way for enhanced content credibility and an informed user community.
 
 ### Research Question 2: Clustering User Engagement Metrics
+
 #### Data Pre-processing, EDA, and Standardization
+
 The data pre-processing phase for clustering user engagement involved selecting relevant features such as video views, likes, shares, downloads, and comments. We have performed exploratory data analysis
 (EDA) to understand the distribution of these metrics and their correlation with user engagement.
 
 After EDA, we standardized the data to normalize the scale of our numerical variables, facilitatingmore meaningful comparisons and clustering.
+
 ![Flowchart of Clustering Process](img/clustering_process.png)
 
 The clustering process applied K-means algorithm using an iterative approach to hyperparameter tuning. We used the Elbow Method to determine the optimal number of clusters, ensuring the most effective grouping of data points based on their similarity in engagement metrics.
 
 #### K-means Clustering Analysis
+
 The K-means clustering algorithm was applied post-standardization to group TikTok videos by user engagement metrics. Optimal clusters were identified using the Elbow Method, which indicated a plateau in within-cluster sum of squares (WCSS) after *3* clusters, suggesting limited gains from additional clusters. Euclidean distance was preferred over Manhattan distance for clearer cluster delineation.
+
 ![Elbow Method for Optimal Cluster Determination](img/wcss.png)
 
 In terms of computational efficiency, the analysis of time complexity revealed that increasing the number of clusters leads to a higher computational burden. This is expected as more clusters require additional computation for assigning data points and updating centroids. The trend was consistent across both Euclidean and Manhattan distance measures, with computational time increasing steadily with the number of clusters.
+
 ![Time Complexity Analysis for K-means Clustering](img/time.png)
 
 #### Result - Cluster Centroid
@@ -377,7 +421,9 @@ The K-means clustering results reveal distinct groups of TikTok videos, each wit
 | Video Comment Count | -0.4125        | 0.0121         | 1.6291         |
 
 #### Pair Plots Analysis
+
 In our K-means clustering of TikTok user engagement metrics, pair plots were instrumental in revealing distinct patterns:
+
 ![Pair Plots of Numerical Data by Cluster](img/pairplot_cluster.png)
 
 - **Cluster 0 (Turquoise):** Representing below-average engagement, this cluster has a dense concentration of points near the origin in pair plot visualizations, indicating many videos with lower engagement metrics. It is the most populous cluster, suggesting a large proportion of content falls into this engagement category.
@@ -407,6 +453,7 @@ The table below presents a snippet of the pre-processed data, correlating transc
 | The number of businesses allowing employees to bring pets to...  | 4110              |
 
 In the study of topic shareability, our initial step was to preprocess the text data from video transcriptions. This preprocessing was multi-staged and essential for cleaning and preparing text data for further analysis, including topic modeling and word cloud visualization.
+
 ![Flowchart of Text Data Pre-process](img/text_process.png)
 
 - **Punctuation Removal:** We stripped punctuation to reduce noise in the text data.
@@ -420,15 +467,21 @@ The preprocessing steps laid the groundwork for accurate and insightful topic mo
 #### Word Cloud
 
 **Opinion V.S. Claim**
+
 `Opinion Shorts` predominantly feature subjective terms such as *think*, *view*, and *believe*, suggesting a personal and introspective nature. Conversely, `Claim Shorts` are characterized by terms like *report*, *discussion*, and *claim*, indicating a propensity for public discourse and factual debate. The contrast highlights opinions as reflections of individual sentiment, whereas claims are positioned for communal scrutiny and validation.
+
 ![Comparative Word Cloud of Opinion and Claim](img/word_cloud_claim.png)
 
 **Verified V.S. Non-verified Authors**
+
 The word clouds distinguish the thematic content of verified versus non-verified authors' videos on TikTok. Verified authors' videos frequently showcase terms like *family*, *understand*, and *impression*, reflecting a narrative that might resonate on a personal level with viewers. In contrast, non-verified authors favor words such as *opinion*, *discussion*, and *view*, highlighting a predilection towards personal perspectives and societal discourse. This divergence suggests that verification may correlate with content that leans more towards storytelling or universally relatable subjects, while non-verified users engage in more individualistic or argumentative expression.
+
 ![Comparative Word Cloud of Verified and Non-verified Authors](img/word_cloud_verified.png)
 
 #### Sentiment Analysis
+
 Sentiment analysis revealed a negligible inverse correlation between sentiment scores and video shares, with a correlation coefficient of -0.04493. The predominance of neutral sentiments (84.7%) in the text data, accompanied by a minority of positive (12.7%) and fewer negative sentiments (2.6%), suggests sentiment's limited impact on shareability. Consequently, sentiment was excluded from subsequent unsupervised learning models due to its insignificance in predicting video shares.
+
 *Correlation Matrix between Sentiment and Video Shares*
 
 | Sentiment | Video Shares |
