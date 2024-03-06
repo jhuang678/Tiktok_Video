@@ -1,4 +1,4 @@
-# Data Mining on TikTok Video and User Engagement
+# Data Mining on TikTok Short and User Engagement
 
 *In a digital era where video content dominates, this report investigates methods to verify TikTok video content and enhance user engagement. By analyzing over 19,000 videos, we have identified methods to detect potentially misleading content and understand what drives user interaction. Our work is pivotal for digital advertising, platform governance, and the creation of a trustworthy social media environment.*
 
